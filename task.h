@@ -7,6 +7,11 @@ typedef struct {
     char id;
     int execution_time;
     int period;
+    int relative_deadline;
+    int priority;
+    int remaining_time;   
+    int absolute_deadline; 
+    int is_active;
 } PeriodicTask;
 
 typedef struct {
@@ -14,6 +19,10 @@ typedef struct {
     int execution_time;
     int release_time;
     int deadline;
+    int priority;
+    int remaining_time;  
+    int absolute_deadline;
+    int is_active;
 } AperiodicTask;
 
 typedef struct {

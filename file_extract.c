@@ -37,6 +37,7 @@ int read_input_file(const char *filename, TaskSet *taskset) {
         taskset->periodic[i].id = id;
         taskset->periodic[i].execution_time = exec;
         taskset->periodic[i].period = period;
+        taskset->periodic[i].absolute_deadline = period;
     }
 
     // Read number of aperiodic tasks
@@ -60,7 +61,7 @@ int read_input_file(const char *filename, TaskSet *taskset) {
         taskset->aperiodic[i].id = id;
         taskset->aperiodic[i].execution_time = exec;
         taskset->aperiodic[i].release_time = release;
-        taskset->aperiodic[i].deadline = release + 500; // implicit deadline of 500
+        taskset->aperiodic[i].absolute_deadline = release + 500; // implicit deadline of 500
     }
 
     fclose(file);
